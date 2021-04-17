@@ -35,8 +35,7 @@ function App() {
   const history = useHistory()
   // const [pubnub, setPubNub] = useState(
   //   new PubNubReact({
-  //     publishKey: 'pub-c-c57ba641-5516-4228-9f2a-7118c18c27ed',
-  //     subscribeKey: 'sub-c-f51e5e1e-9f9c-11eb-8d7b-b642bba3de20'
+  //     
   //   })
   // )
   const [show, setShow] = useState(false)
@@ -61,18 +60,18 @@ function App() {
 
   return (
     <>
-
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Auction</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link><BrowserLink to='/'>Home</BrowserLink></Nav.Link>
-          <Nav.Link><BrowserLink to='/products'>Products</BrowserLink></Nav.Link>
-          <Nav.Link><BrowserLink to='/user'>User</BrowserLink></Nav.Link>
-          <Nav.Link><BrowserLink to='/dashboard'>Dashboard</BrowserLink></Nav.Link>
-        </Nav>
-        <Button onClick={openModal}>Sign Up</Button>
-      </Navbar>
       <Router>
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Auction</Navbar.Brand>
+          <Nav className="mr-auto">
+            <Nav.Link><BrowserLink to='/'>Home</BrowserLink></Nav.Link>
+            <Nav.Link><BrowserLink to='/products'>Products</BrowserLink></Nav.Link>
+            <Nav.Link><BrowserLink to='/user'>User</BrowserLink></Nav.Link>
+            <Nav.Link><BrowserLink to='/dashboard'>Dashboard</BrowserLink></Nav.Link>
+          </Nav>
+          <Button onClick={openModal}>Sign Up</Button>
+        </Navbar>
+
 
 
         <Modal onHide={handeClose} show={show}>
