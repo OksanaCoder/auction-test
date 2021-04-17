@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-// import PubNubReact from 'pubnub';
+import PubNubReact from 'pubnub';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import { Modal, Button, Navbar, Nav } from 'react-bootstrap';
@@ -33,11 +33,12 @@ const data = [
 
 function App() {
   const history = useHistory()
-  // const [pubnub, setPubNub] = useState(
-  //   new PubNubReact({
-  //     
-  //   })
-  // )
+  const [pubnub, setPubNub] = useState(
+    new PubNubReact({
+      publishKey: process.env.PUBLISH_KEY,
+      subscribeKey: process.env.SUBSCRIBE_KEY
+    })
+  )
   const [show, setShow] = useState(false)
   const [name, setName] = useState('')
   const [signed, setSigned] = useState(false)
